@@ -136,6 +136,7 @@ public class MusicUI extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int user_id = rs.getInt("user_id");
+               String usernamedb=rs.getString("username");
                 System.out.println("User id "+user_id);
 
                 String sql1 = "SELECT COUNT(playlist_id) FROM playlist WHERE user_id = ?";
@@ -157,7 +158,7 @@ public class MusicUI extends javax.swing.JFrame {
                 System.out.println("Username and password were found in the database");
                 int index=0;
                 while(rs2.next())
-                {
+                {   
                     String playlist_name=rs2.getString("Playlist_name");
                     String description=rs2.getString("description");
                     System.out.println("playlist name: "+playlist_name);
@@ -176,6 +177,7 @@ public class MusicUI extends javax.swing.JFrame {
                     }
                     index++;
                 }
+                u.usernamelabelText(usernamedb);
                 u.setVisible(true);
                 jLabel3.setText("Connection Successful");
                 setVisible(false);

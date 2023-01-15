@@ -31,6 +31,8 @@ public class Userspace extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        usernamelabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 51));
@@ -78,8 +80,18 @@ public class Userspace extends javax.swing.JFrame {
         });
 
         jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setForeground(new java.awt.Color(0, 0, 0));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(102, 255, 102));
@@ -88,6 +100,16 @@ public class Userspace extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(0, 0, 0));
         jButton7.setForeground(new java.awt.Color(102, 255, 102));
         jButton7.setText("DELETE");
+
+        usernamelabel.setBackground(new java.awt.Color(0, 0, 0));
+        usernamelabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        usernamelabel.setForeground(new java.awt.Color(0, 255, 51));
+        usernamelabel.setText("jLabel3");
+
+        jLabel3.setBackground(new java.awt.Color(0, 204, 51));
+        jLabel3.setFont(new java.awt.Font("SimSun-ExtB", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("WELCOME");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,11 +122,15 @@ public class Userspace extends javax.swing.JFrame {
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(113, 113, 113)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(56, 56, 56)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(113, 113, 113)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(48, 48, 48)
+                        .addComponent(usernamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,36 +143,40 @@ public class Userspace extends javax.swing.JFrame {
                                 .addComponent(jButton1)
                                 .addGap(28, 28, 28)
                                 .addComponent(jButton7)))))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(back)
+                .addContainerGap(412, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(back)
-                        .addContainerGap(412, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton7))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(usernamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton7))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -164,6 +194,10 @@ public class Userspace extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+   public void usernamelabelText(String username)
+   {
+       usernamelabel.setText(username);
+   }
     public void setButtonText2(String text,String desc) {
         jButton2.setText(text);
     }
@@ -187,7 +221,9 @@ public class Userspace extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        SongsUI s=new SongsUI();
+       
        String text=jButton2.getText();
+      s.setPlaylistnameAndGetUsername(text,usernamelabel.getText());
         System.out.println("text on button: "+text);
        s.setVisible(true);
        setVisible(false);
@@ -208,15 +244,15 @@ ResultSet rs = stmt.executeQuery();
         System.out.println(" songs  :"+songname);
         switch(index)
             {
-                case 0:s.setButtonText2(songname);
+                case 0:s.setButtonText2(songname,text);
                     break;
-                case 1:s.setButtonText3(songname);
+                case 1:s.setButtonText3(songname,text);
                        break;
-                case 2:s.setButtonText4(songname);
+                case 2:s.setButtonText4(songname,text);
                         break;
-                case 3:s.setButtonText5(songname);
+                case 3:s.setButtonText5(songname,text);
                         break;
-                case 4:s.setButtonText6(songname);
+                case 4:s.setButtonText6(songname,text);
                         break;
             }
             index++;
@@ -231,6 +267,7 @@ con.close();
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         SongsUI s=new SongsUI();
        String text=jButton3.getText();
+       s.setPlaylistnameAndGetUsername(text,usernamelabel.getText());
         System.out.println("text on button: "+text);
        s.setVisible(true);
        setVisible(false);
@@ -251,15 +288,15 @@ ResultSet rs = stmt.executeQuery();
         System.out.println(" songs  :"+songname);
         switch(index)
             {
-                case 0:s.setButtonText2(songname);
+                case 0:s.setButtonText2(songname,text);
                     break;
-                case 1:s.setButtonText3(songname);
+                case 1:s.setButtonText3(songname,text);
                        break;
-                case 2:s.setButtonText4(songname);
+                case 2:s.setButtonText4(songname,text);
                         break;
-                case 3:s.setButtonText5(songname);
+                case 3:s.setButtonText5(songname,text);
                         break;
-                case 4:s.setButtonText6(songname);
+                case 4:s.setButtonText6(songname,text);
                         break;
             }
             index++;
@@ -273,6 +310,7 @@ con.close();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         SongsUI s=new SongsUI();
        String text=jButton4.getText();
+       s.setPlaylistnameAndGetUsername(text,usernamelabel.getText());
         System.out.println("text on button: "+text);
        s.setVisible(true);
        setVisible(false);
@@ -293,15 +331,15 @@ ResultSet rs = stmt.executeQuery();
         System.out.println(" songs  :"+songname);
         switch(index)
             {
-                case 0:s.setButtonText2(songname);
+                case 0:s.setButtonText2(songname,text);
                     break;
-                case 1:s.setButtonText3(songname);
+                case 1:s.setButtonText3(songname,text);
                        break;
-                case 2:s.setButtonText4(songname);
+                case 2:s.setButtonText4(songname,text);
                         break;
-                case 3:s.setButtonText5(songname);
+                case 3:s.setButtonText5(songname,text);
                         break;
-                case 4:s.setButtonText6(songname);
+                case 4:s.setButtonText6(songname,text);
                         break;
             }
             index++;
@@ -311,6 +349,92 @@ con.close();
           System.out.println(e);
 } 
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       SongsUI s=new SongsUI();
+       String text=jButton5.getText();
+       s.setPlaylistnameAndGetUsername(text,usernamelabel.getText());
+        System.out.println("text on button: "+text);
+       s.setVisible(true);
+       setVisible(false);
+       try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/music", "root", "root123");
+    
+    String sql = "SELECT s.song_name FROM song s JOIN playlist_song ps ON ps.song_id = s.song_id JOIN playlist p ON p.playlist_id = ps.playlist_id WHERE p.playlist_name = ?";
+PreparedStatement stmt = con.prepareStatement(sql);
+stmt.setString(1, text);
+ResultSet rs = stmt.executeQuery();
+    s.setVisible(true);
+    setVisible(false);
+    int index=0;
+    while(rs.next())
+    {
+        String songname=rs.getString("song_name");
+        System.out.println(" songs  :"+songname);
+        switch(index)
+            {
+                case 0:s.setButtonText2(songname,text);
+                    break;
+                case 1:s.setButtonText3(songname,text);
+                       break;
+                case 2:s.setButtonText4(songname,text);
+                        break;
+                case 3:s.setButtonText5(songname,text);
+                        break;
+                case 4:s.setButtonText6(songname,text);
+                        break;
+            }
+            index++;
+    }
+con.close(); 
+      } catch (Exception e) {
+          System.out.println(e);
+} 
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       SongsUI s=new SongsUI();
+       String text=jButton6.getText();
+       s.setPlaylistnameAndGetUsername(text,usernamelabel.getText());
+        System.out.println("text on button: "+text);
+       s.setVisible(true);
+       setVisible(false);
+       try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/music", "root", "root123");
+    
+    String sql = "SELECT s.song_name FROM song s JOIN playlist_song ps ON ps.song_id = s.song_id JOIN playlist p ON p.playlist_id = ps.playlist_id WHERE p.playlist_name = ?";
+PreparedStatement stmt = con.prepareStatement(sql);
+stmt.setString(1, text);
+ResultSet rs = stmt.executeQuery();
+    s.setVisible(true);
+    setVisible(false);
+    int index=0;
+    while(rs.next())
+    {
+        String songname=rs.getString("song_name");
+        System.out.println(" songs  :"+songname);
+        switch(index)
+            {
+                case 0:s.setButtonText2(songname,text);
+                    break;
+                case 1:s.setButtonText3(songname,text);
+                       break;
+                case 2:s.setButtonText4(songname,text);
+                        break;
+                case 3:s.setButtonText5(songname,text);
+                        break;
+                case 4:s.setButtonText6(songname,text);
+                        break;
+            }
+            index++;
+    }
+con.close(); 
+      } catch (Exception e) {
+          System.out.println(e);
+} 
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -355,6 +479,8 @@ con.close();
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel usernamelabel;
     // End of variables declaration//GEN-END:variables
 }

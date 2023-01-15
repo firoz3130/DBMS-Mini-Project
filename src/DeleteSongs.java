@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -114,13 +115,15 @@ public class DeleteSongs extends javax.swing.JFrame {
     PreparedStatement stmt = con.prepareStatement(sql);
 stmt.setString(1,songname.getText());
 stmt.executeUpdate();
+JOptionPane pane=new JOptionPane();
+JOptionPane.showMessageDialog(pane,"DELETED SUCCESSFULLY");
 SongsUI s=new SongsUI();
 setVisible(false);
              System.out.println("Deleted Successfully");
         }
         catch(Exception e)
         {
-            System.out.println("exceptioon occured"+e);
+            System.out.println("exception occured"+e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
