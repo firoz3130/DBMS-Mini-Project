@@ -100,7 +100,7 @@ public class MusicUI extends javax.swing.JFrame {
                 .addComponent(LoginSubmit)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel3)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,15 +114,15 @@ public class MusicUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginSubmitActionPerformed
-
         try
         {
             String username=USERNAME.getText();

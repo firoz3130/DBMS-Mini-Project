@@ -148,7 +148,7 @@ public void setUsername(String username)
                 Userspace u=new Userspace();
             String sql2="SELECT playlist_name,description FROM playlist WHERE user_id = ?";
                 PreparedStatement stmt2 = con.prepareStatement(sql2);
-                stmt2.setString(1,Username.getText());
+                stmt2.setInt(1,user_id);
                 ResultSet rs2=stmt2.executeQuery();
                 while(rs2.next())
                 {   
