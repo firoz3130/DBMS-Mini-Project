@@ -100,7 +100,7 @@ public class MusicUI extends javax.swing.JFrame {
                 .addComponent(LoginSubmit)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel3)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,15 +114,15 @@ public class MusicUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginSubmitActionPerformed
-
         try
         {
             String username=USERNAME.getText();
@@ -136,6 +136,7 @@ public class MusicUI extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int user_id = rs.getInt("user_id");
+               String usernamedb=rs.getString("username");
                 System.out.println("User id "+user_id);
 
                 String sql1 = "SELECT COUNT(playlist_id) FROM playlist WHERE user_id = ?";
@@ -157,7 +158,7 @@ public class MusicUI extends javax.swing.JFrame {
                 System.out.println("Username and password were found in the database");
                 int index=0;
                 while(rs2.next())
-                {
+                {   
                     String playlist_name=rs2.getString("Playlist_name");
                     String description=rs2.getString("description");
                     System.out.println("playlist name: "+playlist_name);
@@ -176,6 +177,7 @@ public class MusicUI extends javax.swing.JFrame {
                     }
                     index++;
                 }
+                u.usernamelabelText(usernamedb);
                 u.setVisible(true);
                 jLabel3.setText("Connection Successful");
                 setVisible(false);
