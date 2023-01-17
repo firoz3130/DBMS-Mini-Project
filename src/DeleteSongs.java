@@ -159,9 +159,10 @@ public void setPlaylistnameAndGetUsername(String text,String username)
          try{
               Class.forName("com.mysql.cj.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/music", "root", "root123");
-    String sql="DELETE FROM playlist_song\n" +
-"WHERE song_id = (SELECT song_id FROM song WHERE song_name = ?)\n" +
-"AND playlist_id = (SELECT playlist_id FROM playlist WHERE playlist_name = ? AND user_id = (SELECT user_id FROM user WHERE username = ?))";
+    String sql="""
+               DELETE FROM playlist_song
+               WHERE song_id = (SELECT song_id FROM song WHERE song_name = ?)
+               AND playlist_id = (SELECT playlist_id FROM playlist WHERE playlist_name = ? AND user_id = (SELECT user_id FROM user WHERE username = ?))""";
     PreparedStatement stmt = con.prepareStatement(sql);
 stmt.setString(1,songname.getText());
 stmt.setString(2,jLabel3.getText());

@@ -128,6 +128,11 @@ public class Userspace extends javax.swing.JFrame {
         jButton8.setBackground(new java.awt.Color(0, 0, 0));
         jButton8.setForeground(new java.awt.Color(0, 255, 51));
         jButton8.setText("UPDATE");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -266,9 +271,9 @@ ResultSet rs = stmt.executeQuery();
         switch(index)
             {
                 case 0:s.setButtonText2(songname,text);
-                    break;
+                        break;
                 case 1:s.setButtonText3(songname,text);
-                       break;
+                        break;
                 case 2:s.setButtonText4(songname,text);
                         break;
                 case 3:s.setButtonText5(songname,text);
@@ -470,6 +475,13 @@ con.close();
             d.setVisible(true);
             setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        UpdatePlaylists up=new UpdatePlaylists();
+        up.setVisible(true);
+        up.setUsername(jLabel3.getText());
+        setVisible(false);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
