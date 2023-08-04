@@ -33,6 +33,7 @@ public class UpdatePlaylists extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,16 @@ public class UpdatePlaylists extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 255, 0));
+        jButton2.setText("🔙");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -101,8 +112,10 @@ public class UpdatePlaylists extends javax.swing.JFrame {
                                 .addGap(28, 28, 28)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(220, 220, 220)
+                .addGap(301, 301, 301)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,9 +136,11 @@ public class UpdatePlaylists extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,6 +184,54 @@ JOptionPane.showMessageDialog(pane,"UPDATED SUCCESSFULLY");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/music", "root", "root123");
+            String sql1="SELECT user_id FROM user WHERE username = ?";
+            PreparedStatement ps=con.prepareStatement(sql1);
+            ps.setString(1,jLabel2.getText());
+            ResultSet rs1=ps.executeQuery();
+            if(rs1.next())
+            {
+                int user_id=rs1.getInt("user_id");
+                String sql2="SELECT playlist_name,description FROM playlist WHERE user_id = ?";
+                PreparedStatement getPlaylistName=con.prepareStatement(sql2);
+                getPlaylistName.setInt(1,user_id);
+                ResultSet rs2=getPlaylistName.executeQuery();
+                int index=0;
+                Userspace u=new Userspace();
+        u.setVisible(true);
+        u.usernamelabelText(jLabel2.getText());
+        setVisible(false);
+                while(rs2.next())
+                {   
+                    String playlist_name=rs2.getString("Playlist_name");
+                    String description=rs2.getString("description");
+                    System.out.println("playlist name: "+playlist_name);
+                    switch(index)
+                    {
+                        case 0:u.setButtonText2(playlist_name,description);
+                                break;
+                        case 1:u.setButtonText3(playlist_name,description);
+                                break;
+                        case 2:u.setButtonText4(playlist_name,description);
+                                break;
+                        case 3:u.setButtonText5(playlist_name,description);
+                                break;
+                        case 4:u.setButtonText6(playlist_name,description);
+                                break;
+                    }
+                    index++;
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -204,6 +267,7 @@ JOptionPane.showMessageDialog(pane,"UPDATED SUCCESSFULLY");
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

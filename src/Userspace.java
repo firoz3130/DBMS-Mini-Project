@@ -302,9 +302,9 @@ con.close();
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/music", "root", "root123");
     
     String sql = "SELECT s.song_name FROM song s JOIN playlist_song ps ON ps.song_id = s.song_id JOIN playlist p ON p.playlist_id = ps.playlist_id WHERE p.playlist_name =      ?";
-PreparedStatement stmt = con.prepareStatement(sql);
-stmt.setString(1, text);
-ResultSet rs = stmt.executeQuery();
+    PreparedStatement stmt = con.prepareStatement(sql);
+    stmt.setString(1, text);
+    ResultSet rs = stmt.executeQuery();
     s.setVisible(true);
     setVisible(false);
     int index=0;
@@ -479,7 +479,7 @@ con.close();
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         UpdatePlaylists up=new UpdatePlaylists();
         up.setVisible(true);
-        up.setUsername(jLabel3.getText());
+        up.setUsername(usernamelabel.getText());
         setVisible(false);
     }//GEN-LAST:event_jButton8ActionPerformed
 
