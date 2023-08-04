@@ -355,11 +355,11 @@ public class SongsUI extends javax.swing.JFrame {
 
             // Prepare the SQL statement to search for songs that match the search term
             String sql = "SELECT song.song_name, singer.singer_name, song.genre FROM song JOIN singer ON song.singer_id = singer.singer_id JOIN playlist_song ON song.song_id = playlist_song.song_id JOIN playlist ON playlist_song.playlist_id = playlist.playlist_id WHERE (song_name LIKE ? OR singer_name LIKE ? OR genre LIKE ?) AND playlist_name = ?";
-PreparedStatement stmt = con.prepareStatement(sql);
-stmt.setString(1, "%" + searchTerm + "%");
-stmt.setString(2, "%" + searchTerm + "%");
-stmt.setString(3, "%" + searchTerm + "%");
-stmt.setString(4, jLabel3.getText());
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, "%" + searchTerm + "%");
+            stmt.setString(2, "%" + searchTerm + "%");
+            stmt.setString(3, "%" + searchTerm + "%");
+            stmt.setString(4, jLabel3.getText());
 
             // Execute the SQL statement and retrieve the search results
             ResultSet rs = stmt.executeQuery();

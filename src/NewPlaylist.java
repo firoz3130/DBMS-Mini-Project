@@ -172,8 +172,7 @@ String currentPlaylist;
 }
    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-currentPlaylist=playlistcurrent.getText();
+    currentPlaylist=playlistcurrent.getText();
   // System.out.println("Current playlist name jButton1 ie submit button is "+playlistcurrent.getText());
         try {
             int singerId = 0;
